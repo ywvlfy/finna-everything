@@ -1,0 +1,19 @@
+{
+  "name": "twitterbot1",
+  "version": "1.0.0",
+  "description": "building a twitter bot for my junior developer portfolio",
+  "main": "twit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "keywords": [
+    "twitter",
+    "junior-portfolio"
+  ],
+  "author": "ywvlfy",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
