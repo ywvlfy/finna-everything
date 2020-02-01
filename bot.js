@@ -3,6 +3,10 @@ console.log('the bot is starting');
 
 var Twit = require('twit');
 
+var Sentencer = require('sentencer');
+
+let percent = Math.floor(Math.random() * 101) +'%';
+
 var T = new Twit({
   consumer_key:         'g42NrhuNFC9FTWhdoHq0sMoOf',
   consumer_secret:      'fEWY6AEK2sGajQYtpm4fjCj4BZMBPLd5O6YQMaXbhtQCfD2LsH',
@@ -13,7 +17,10 @@ var T = new Twit({
 });
 
 
-T.post('statuses/update', { status: 'there is a ' + Math.floor(Math.random() * 101) + '% chance that you will have a good day today.' }, function(err, data, response) {
+T.post('statuses/update', 
+	{ status: "Today's forecast shows a " + Math.floor(Math.random() * 101) +'%' + Sentencer.make(" chance that you will encounter {{ an_adjective }} {{ noun }}. \n  \nBe {{ adjective }} today, there is a ") + Math.floor(Math.random() * 101) +'%' + Sentencer.make(" probablility the {{ nouns }} will be {{ adjective }}.") + "\n \n" + "there is a "  + Math.floor(Math.random() * 101) +'%' + Sentencer.make(" chance that you will have {{ an_adjective }} day today, with a high of {{ adjective }} and a low of {{ adjective }}. ") }, 
+
+	function(err, data, response) {
   console.log(data); console.log("///////////////////////////////////////////////////"); console.log("tweet tweeted")
 });
 
